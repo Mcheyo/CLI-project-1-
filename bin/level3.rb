@@ -16,7 +16,8 @@ def level3
      enemies = Enemy.all
      current_enemy = enemies[2]
      heal_count = 0 
-     puts "1.Attack, 2. Dodge, 3. Heal"
+     special_move_count = 0 
+     puts "1.Attack, 2. Dodge, 3. Heal,  4 . #{@special_move}"
      
      # does a reduction on the enemy
      while @current_character.health > 0 && current_enemy.health > 0
@@ -34,7 +35,7 @@ def level3
              puts "#{current_enemy.name} attacks #{@current_character.name} back"
              @current_character.health -= rand(10..20)
              puts "Your health is at #{@current_character.health}."
-             puts "1.Attack, 2. Dodge, 3. Heal"
+             puts "1.Attack, 2. Dodge, 3. Heal,  4 . #{@special_move}"
          elsif user_input == "2"
              
              dodge_chance = rand(1..10)
@@ -47,7 +48,7 @@ def level3
                  puts "Your health is at #{@current_character.health}."
  
              end
-             puts "1.Attack, 2. Dodge, 3. Heal"
+             puts "1.Attack, 2. Dodge, 3. Heal,  4 . #{@special_move}"
          elsif user_input == "3"
              
              heal_count +=1 
@@ -63,10 +64,40 @@ def level3
              puts "You are out of heals"
          
             end 
-             puts "1.Attack, 2. Dodge, 3. Heal"
+        elsif  user_input == "4"
+            special_move_count +=1
+            if special_move_count <=2 
+                if @special_move == "Regeneration"
+                    @current_character.health = 100 
+                    puts "Wolverine used his regeneration powers and restored his health to #{@current_character.health}"
+                    puts "1.Attack, 2. Dodge, 3. Heal,  4 . #{@special_move}"
+                elsif @special_move == "Telekinesis"
+                    @current_character.health -= 5
+                    current_enemy.health -= 30 
+                    puts "Jean Grey uses her psychic powers and inflicts heavy damage on #{current_enemy.name} with little damage to herself"
+                    puts "#{current_enemy.name} health is at #{current_enemy.health}."
+                    puts "Your health is at #{@current_character.health}."
+                    puts "1.Attack, 2. Dodge, 3. Heal,  4 . #{@special_move}"
+
+                    
+                elsif @special_move == "Agility"
+                    current_enemy.health -= 10 
+                    puts "Quicksilver attacked with super speed!" 
+                    puts "#{current_enemy.name} health is at #{current_enemy.health}."
+                    puts "Your health is at #{@current_character.health}."
+                    puts "1.Attack, 2. Dodge, 3. Heal,  4 . #{@special_move}"
+
+                end 
+            elsif special_move_count > 2
+                    puts "Your moves are recharging"
+            end 
+
+
+
+            
          else
              puts "Invlaid command please choose between '1', '2', or '3'" 
-             puts "1.Attack, 2. Dodge, 3. Heal" 
+             puts "1.Attack, 2. Dodge, 3. Heal,  4 . #{@special_move}"
          end
          
      
@@ -74,7 +105,7 @@ def level3
      end
      
      if current_enemy.health <= 0
-         puts "Congrats you beat #{current_enemy.name} Move on to next level."
+         puts "Congrats you beat #{current_enemy.name} and saved the galaxy! "
      elsif @current_character.health <=0
          puts "#{current_enemy.name} proved too much for you...try again another day"
          @life_count -= 1 
