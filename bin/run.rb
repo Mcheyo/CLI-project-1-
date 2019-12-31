@@ -2,6 +2,7 @@ require_relative '../config/environment'
 require 'pry'
 require_relative '../bin/level1'
 require_relative '../bin/level2'
+require_relative '../bin/level3'
 
 @current_character = "test"
 @life_count = 0
@@ -64,7 +65,6 @@ def choose_character
     end
     
 end
-
 
 # def level1
 #     level_array =[]
@@ -144,8 +144,8 @@ def run
     greeting
     choose_character
     level1  
-    fight
     level2
+    level3
 end
 
 run

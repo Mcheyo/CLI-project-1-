@@ -1,7 +1,11 @@
 def level2
+   if @life_count <= 0 
+    puts "Insert 1 dollar to try again"
+   elsif @life_count > 0 
     level_array =[]
     level_array << Level.all
     puts "You Have Entered Phase 2 #{level_array[0][1].description}"
+    
     # fight 
     # binding.pry
     
@@ -73,6 +77,10 @@ def level2
         puts "Congrats you beat #{current_enemy.name} Move on to next level."
     elsif @current_character.health <=0
         puts "#{current_enemy.name} proved too much for you...try again another day"
+        @life_count -= 1 
+        puts "You have #{@life_count} lives remaining"
+        level2
     end 
-        
+end 
+
 end
