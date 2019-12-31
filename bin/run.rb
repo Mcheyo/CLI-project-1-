@@ -3,6 +3,7 @@ require 'pry'
 
 @current_character = "test"
 
+
 def greeting
     puts "“Welcome to Adventure of ruby… would you like to play?” y/n?"
     user_input = gets.chomp
@@ -24,6 +25,7 @@ def choose_character
     
     characters = []
     characters << Character.all 
+    puts "1) Wolverine 2)Jean Grey 3)Quick-Silver"
     
     puts "Choose Your Character.."
     user_input = gets.chomp
@@ -83,11 +85,11 @@ def fight
     if user_input == "1"
         puts "#{@current_character.name} attacks #{current_enemy.name}"
         # binding.pry
-        current_enemy.health -= 10
+        current_enemy.health -=  rand(1..10)
         puts "#{current_enemy.name} health is at #{current_enemy.health}."
 
         puts "#{current_enemy.name} attacks #{@current_character.name} back"
-        @current_character.health -= 15
+        @current_character.health -= rand(1..10)
         puts "Your health is at #{@current_character.health}."
     elsif user_input == "2"
         
