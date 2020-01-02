@@ -2,23 +2,25 @@ require_relative '../config/environment'
 Character.delete_all
 Level.delete_all
 Enemy.delete_all
+Move.delete_all 
+CharacterMove.delete_all
 
-wolverine = Character.create(name:"Wolverine", health:100, curr_health: 100, lives: 3)
-jeangrey = Character.create(name:"Jean Grey", health:100, curr_health: 100, lives: 3)
-quicksilver = Character.create(name:"Quick-Silver", health:100, curr_health: 100, lives: 3)
+greenmartian = Character.create(name:"Martian Man-Hunter", health:100, curr_health: 100, lives: 3)
+superman = Character.create(name:"SuperMan", health:100, curr_health: 100, lives: 3)
+flash = Character.create(name:"Flash", health:100, curr_health: 100, lives: 3)
 
-phoenix = Enemy.create(name:"Dark Phoenix",health:100,curr_health:100,strength:3)
-magneto = Enemy.create(name:"Magneto",health:100,curr_health:100,strength:3)
-thanos = Enemy.create(name:"Thanos",health:100,curr_health:100,strength:3)
+brainiac = Enemy.create(name:"Brainiac",health:100,curr_health:100,strength:3)
+joker = Enemy.create(name:"Joker",health:100,curr_health:100,strength:3)
+darkseid = Enemy.create(name:"Darkseid",health:100,curr_health:100,strength:3)
 
-level1 = Level.create(title:"Phase 1", description: "Magneto has taken the President hostage. Defeat him and save the President", enemies_id: magneto.id)
-level2 = Level.create(title:"Phase 2", description: "Phoneix is out of control and trying to take take over city hall",enemies_id: phoenix.id)
-level3 = Level.create(title:"Phase 3", description:"Thanos is attempting to take the last infinite stone. Destroy him before he does.", enemies_id: thanos.id)
+level1 = Level.create(title:"Phase 1", description: "Joker is up to his old tricks. He is holding the mayor of Gotham hostage. Help Batman defeat him!", enemies_id: joker.id)
+level2 = Level.create(title:"Phase 2", description: "We just got word that Metropolis is under attack by Brainiac. Get over there and help defend the city! ",enemies_id: brainiac.id)
+level3 = Level.create(title:"Phase 3", description:"Shortly after defeating Brainiac a boom tube appears and the mastermind behind everthing appears. Its Darkseid! Save us all! .", enemies_id: darkseid.id)
 
 move1 = Move.create(name: "Regeneration")
-move2 = Move.create(name:"Telekinesis")
-move3 = Move.create(name: "Agility")
+move2 = Move.create(name:"Heat Vision")
+move3 = Move.create(name: "Speed Force")
 
-w_move = CharacterMove.create(char_id: wolverine.id, move_id: move1.id)
-j_move = CharacterMove.create(char_id: jeangrey.id, move_id: move2.id)
-qs_move = CharacterMove.create(char_id: quicksilver.id, move_id: move2.id)
+gm_move = CharacterMove.create(char_id: greenmartian.id, move_id: move1.id)
+sm_move = CharacterMove.create(char_id: superman.id, move_id: move2.id)
+f_move = CharacterMove.create(char_id: flash.id, move_id: move2.id)

@@ -1,23 +1,29 @@
 require_relative '../config/environment'
 require 'pry'
+require 'tty-prompt'
 require_relative '../bin/level1'
 require_relative '../bin/level2'
 require_relative '../bin/level3'
-
+@prompt = TTY::Prompt.new
 @current_character = "test"
 @life_count = 0
 @special_move = "wiaitng"
 
 def greeting
-    puts "“Welcome to Adventure of ruby… would you like to play?” y/n?"
-    user_input = gets.chomp
-    if user_input == "y"
+    # puts "“Welcome to Adventure of ruby… would you like to play?” y/n?"
+    # user_input = gets.chomp
+    decision = @prompt.yes?("Welcome to Adventure of ruby… would you like to play?")
+    # binding.pry
+    if decision == true
+
         puts "Welcome to Adventure of ruby…"
         
-    elsif user_input == "n"
+    elsif decision == false
         puts "GoodBye Loser"
+        abort
     else
         puts "Invalid Command."
+        greeting
     end
 end
 
@@ -29,12 +35,13 @@ def choose_character
     characters = Character.all 
     move = Move.all
     
-    puts "1) Wolverine 2)Jean Grey 3)Quick-Silver"
+    # puts "1) Wolverine 2)Jean Grey 3)Quick-Silver"
     
-    puts "Choose Your Character.."
-    user_input = gets.chomp
+    # puts "Choose Your Character.."
+    # user_input = gets.chomp
+   ch = @prompt.select("Choose Your Character..", %w(Martian-Manhunter Superman Flash))
     
-    if user_input == "1"
+    if ch == "Martian-Manhunter"
         # binding.pry
         @current_character = characters[0]
         first = characters[0].name
@@ -45,7 +52,7 @@ def choose_character
         end
             
             
-        elsif user_input == "2"
+        elsif ch == "Superman"
             @current_character = characters[1]
             second = characters[1].name
             @life_count = characters[1].lives
@@ -54,7 +61,7 @@ def choose_character
                 @special_move = move[1].name
             end
                 
-            elsif user_input == "3"
+            elsif ch == "Flash"
                 @current_character = characters[2]
                 third = characters[2].name
                 @life_count = characters[2].lives
