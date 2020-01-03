@@ -5,7 +5,8 @@ def level3
     elsif @life_count > 0 
      level_array =[]
      level_array << Level.all
-     puts "You Have Entered Phase 2 #{level_array[0][2].description}"
+     darkseid_pics 
+     puts " #{level_array[0][2].description}"
      
      # fight 
      # binding.pry
@@ -91,7 +92,7 @@ def level3
                     @num_moves = 0
                 end
 
-            special_move_count +=1
+            
             if special_move_count <=2 
                 if @special_move == "Regeneration"
                     @current_character.health = 100 
@@ -132,7 +133,10 @@ def level3
      end
      
      if @current_enemy.health <= 0
-         puts "#{@current_enemy.name} retreats back to his planet through a boom tube. The planet is saved for the day... "
+         puts "#{@current_enemy.name} retreats back to his planet through a boom tube. The planet is saved for the day.. "
+         puts "Here is your reward!"
+         victory_pic
+        
      elsif @current_character.health <=0
          puts "#{@current_enemy.name} defeats you and his minions come and enslave the planet. Thanks I guess.."
          @life_count -= 1 

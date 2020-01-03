@@ -6,6 +6,7 @@ require_relative '../bin/level2'
 require_relative '../bin/level3'
 require_relative '../bin/bio.rb'
 require_relative '../bin/status.rb'
+require_relative '../bin/pictures.rb'
 @prompt = TTY::Prompt.new
 @current_character = "test"
 @life_count = 0
@@ -19,6 +20,7 @@ end
 
 def greeting
     system('clear')
+    intro_pics
     # puts "“Welcome to Adventure of ruby… would you like to play?” y/n?"
     # user_input = gets.chomp
     decision = @prompt.yes?("Welcome to Justice League in Ruby. Ready to save the world?")
@@ -89,10 +91,7 @@ def choose_character
                     @special_move = move[2].name
                     
                 end
-            elsif ch == "Help"
-                puts "HUGE BIO"
-    
-                choose_character
+           
                     
                     
             elsif ch == "Help" 
