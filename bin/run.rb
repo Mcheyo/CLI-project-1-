@@ -4,6 +4,7 @@ require 'tty-prompt'
 require_relative '../bin/level1'
 require_relative '../bin/level2'
 require_relative '../bin/level3'
+require_relative '../bin/bio.rb'
 @prompt = TTY::Prompt.new
 @current_character = "test"
 @life_count = 0
@@ -12,17 +13,17 @@ require_relative '../bin/level3'
 def greeting
     # puts "“Welcome to Adventure of ruby… would you like to play?” y/n?"
     # user_input = gets.chomp
-    decision = @prompt.yes?("Welcome to Adventure of ruby… would you like to play?")
+    decision = @prompt.yes?("Welcome to Justice League in Ruby. Ready to save the world?")
     # binding.pry
     if decision == true
 
-        puts "Welcome to Adventure of ruby…"
-        
+        puts "Lets get to saving the world!"
+        bio 
     elsif decision == false
-        puts "GoodBye Loser"
+        puts "Oh ok, guess we'll just die or whatever"
         abort
     else
-        puts "Invalid Command."
+        puts "Invalid Command. Please enter 'yes' or 'no'"
         greeting
     end
 end
@@ -39,7 +40,7 @@ def choose_character
     
     # puts "Choose Your Character.."
     # user_input = gets.chomp
-   ch = @prompt.select("Choose Your Character..", %w(Martian-Manhunter Superman Flash))
+   ch = @prompt.select("Choose Your Character..", %w(Martian-Manhunter Superman Flash Help))
     
     if ch == "Martian-Manhunter"
         # binding.pry
@@ -73,7 +74,13 @@ def choose_character
                     
                     
                     
-                    
+            elsif ch == "Help" 
+                help 
+                puts "\n"
+                
+                choose_character
+            
+              
                     
                     
                 else
