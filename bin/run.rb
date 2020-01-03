@@ -7,27 +7,42 @@ require_relative '../bin/level3'
 @prompt = TTY::Prompt.new
 @current_character = "test"
 @life_count = 0
-@special_move = "wiaitng"
+@special_move = "waitng"
+
+def dc_ascii
+    
+   
+end
 
 def greeting
     # puts "“Welcome to Adventure of ruby… would you like to play?” y/n?"
     # user_input = gets.chomp
+    system('clear')
     decision = @prompt.yes?("Welcome to Adventure of ruby… would you like to play?")
     # binding.pry
     if decision == true
 
         puts "Welcome to Adventure of ruby…"
-        
+        system('clear')
+
     elsif decision == false
         puts "GoodBye Loser"
         abort
     else
         puts "Invalid Command."
+        system('clear')
+
         greeting
+
     end
 end
 
+# def help
+#     puts "HUGE BIO"
+    
+#     choose_character
 
+# end
 
 
 def choose_character
@@ -39,7 +54,7 @@ def choose_character
     
     # puts "Choose Your Character.."
     # user_input = gets.chomp
-   ch = @prompt.select("Choose Your Character..", %w(Martian-Manhunter Superman Flash))
+   ch = @prompt.select("Choose Your Character..", %w(Martian-Manhunter Superman Flash Help))
     
     if ch == "Martian-Manhunter"
         # binding.pry
@@ -50,7 +65,8 @@ def choose_character
         if char_move[0].char_id == characters[0].id
             @special_move = move[0].name
         end
-            
+        system('clear')
+
             
         elsif ch == "Superman"
             @current_character = characters[1]
@@ -70,7 +86,10 @@ def choose_character
                     @special_move = move[2].name
                     
                 end
-                    
+            elsif ch == "Help"
+                puts "HUGE BIO"
+    
+                choose_character
                     
                     
                     
