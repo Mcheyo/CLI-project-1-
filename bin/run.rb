@@ -5,10 +5,12 @@ require_relative '../bin/level1'
 require_relative '../bin/level2'
 require_relative '../bin/level3'
 require_relative '../bin/bio.rb'
+require_relative '../bin/status.rb'
 @prompt = TTY::Prompt.new
 @current_character = "test"
 @life_count = 0
 @special_move = "waitng"
+@num_moves = 2 
 
 def dc_ascii
     
@@ -48,7 +50,8 @@ def choose_character
     char_move = CharacterMove.all 
     characters = Character.all 
     move = Move.all
-    
+    # puts status_bar
+
     # puts "1) Wolverine 2)Jean Grey 3)Quick-Silver"
     
     # puts "Choose Your Character.."
