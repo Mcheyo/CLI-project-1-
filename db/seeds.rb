@@ -4,6 +4,8 @@ Level.delete_all
 Enemy.delete_all
 Move.delete_all 
 CharacterMove.delete_all
+BadMove.delete_all
+EnemyMove.delete_all
 
 greenmartian = Character.create(name:"Martian Man-Hunter", health:100, curr_health: 100, lives: 3)
 superman = Character.create(name:"SuperMan", health:100, curr_health: 100, lives: 3)
@@ -24,3 +26,12 @@ move3 = Move.create(name: "Speed Force")
 gm_move = CharacterMove.create(char_id: greenmartian.id, move_id: move1.id)
 sm_move = CharacterMove.create(char_id: superman.id, move_id: move2.id)
 f_move = CharacterMove.create(char_id: flash.id, move_id: move2.id)
+
+
+e_move1 = BadMove.create(name:"Laughing Gas")
+e_move2 = BadMove.create(name:"Mind Control")
+e_move3 = BadMove.create(name:"Omega Beam")
+
+j_move = EnemyMove.create(enemy:joker, move_id: e_move1.id)
+b_move = EnemyMove.create(enemy:brainiac, move_id: e_move2.id)
+ds_move = EnemyMove.create(enemy:darkseid, move_id: e_move3.id)

@@ -35,6 +35,7 @@ def level1
     
     
         if user_moves == "Attack"
+            
             system('clear')
 
                 puts "#{@current_character.name} attacks #{@current_enemy.name}"

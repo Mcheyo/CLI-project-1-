@@ -5,7 +5,7 @@ require_relative '../config/environment'
 
 def intro_pics 
 
-    Catpix::print_image "/Users/cheyo/flatiron/Mod1_project/ruby-project-guidelines-dc-web-120919/lib/images/JL.jpeg",
+    Catpix::print_image "/Users/amiadefreitas/Flatiron/mod1/ruby-project-guidelines-dc-web-120919/lib/images/JL.jpeg",
     :limit_x => 1.0,
     :limit_y => 0,
     :center_x => true,
@@ -16,7 +16,7 @@ def intro_pics
 end 
 
 def joker_pics
-Catpix::print_image "/Users/cheyo/flatiron/Mod1_project/ruby-project-guidelines-dc-web-120919/lib/images/Joker.jpg",
+Catpix::print_image "/Users/amiadefreitas/Flatiron/mod1/ruby-project-guidelines-dc-web-120919/lib/images/joker.jpg",
 :limit_x => 1.0,
 :limit_y => 0,
 :center_x => true,
@@ -27,7 +27,7 @@ Catpix::print_image "/Users/cheyo/flatiron/Mod1_project/ruby-project-guidelines-
 end
 
 def brainiac_pics 
-Catpix::print_image "/Users/cheyo/flatiron/Mod1_project/ruby-project-guidelines-dc-web-120919/lib/images/Brainiac .png",
+Catpix::print_image "/Users/amiadefreitas/Flatiron/mod1/ruby-project-guidelines-dc-web-120919/lib/images/Brainiac .png",
 :limit_x => 1.0,
 :limit_y => 0,
 :center_x => true,
@@ -40,7 +40,7 @@ end
 
 
 def darkseid_pics 
-Catpix::print_image "/Users/cheyo/flatiron/Mod1_project/ruby-project-guidelines-dc-web-120919/lib/images/Darkseid.jpg",
+Catpix::print_image "/Users/amiadefreitas/Flatiron/mod1/ruby-project-guidelines-dc-web-120919/lib/images/Darkseid.jpg",
 :limit_x => 1.0,
 :limit_y => 0,
 :center_x => true,
@@ -51,7 +51,7 @@ Catpix::print_image "/Users/cheyo/flatiron/Mod1_project/ruby-project-guidelines-
 end 
 
 def victory_pic 
-    Catpix::print_image"/Users/cheyo/flatiron/Mod1_project/ruby-project-guidelines-dc-web-120919/lib/images/cookie.jpeg",
+    Catpix::print_image"/Users/amiadefreitas/Flatiron/mod1/ruby-project-guidelines-dc-web-120919/lib/images/cookie.jpeg",
     :limit_x => 1.0,
 :limit_y => 0,
 :center_x => true,

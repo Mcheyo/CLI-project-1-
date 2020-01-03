@@ -10,7 +10,11 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20191231190939) do
+ActiveRecord::Schema.define(version: 20200103192720) do
+
+  create_table "bad_moves", force: :cascade do |t|
+    t.string "name"
+  end
 
   create_table "character_moves", force: :cascade do |t|
     t.integer "char_id"
@@ -29,6 +33,11 @@ ActiveRecord::Schema.define(version: 20191231190939) do
     t.integer "health"
     t.integer "curr_health"
     t.integer "strength"
+  end
+
+  create_table "enemy_moves", force: :cascade do |t|
+    t.integer "enemy_id"
+    t.integer "move_id"
   end
 
   create_table "levels", force: :cascade do |t|
