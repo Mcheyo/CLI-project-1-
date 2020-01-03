@@ -18,6 +18,7 @@ def dc_ascii
 end
 
 def greeting
+    system('clear')
     # puts "“Welcome to Adventure of ruby… would you like to play?” y/n?"
     # user_input = gets.chomp
     decision = @prompt.yes?("Welcome to Justice League in Ruby. Ready to save the world?")
