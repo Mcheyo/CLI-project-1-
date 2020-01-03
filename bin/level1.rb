@@ -5,6 +5,7 @@ def level1
     elsif @life_count > 0 
     level_array =[]
     level_array << Level.all
+    joker_pics 
     puts "Batman has just sent a distress signal! Get to Gotham immmediatley! #{level_array[0][0].description}"
     # fight 
     # binding.pry

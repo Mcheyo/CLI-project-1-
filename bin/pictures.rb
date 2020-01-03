@@ -12,7 +12,7 @@ def intro_pics
     :center_y => true,
     :bg => "white",
     :bg_fill => true,
-    :resolution => "auto"
+    :resolution => "medium"
 end 
 
 def joker_pics
@@ -61,4 +61,3 @@ def victory_pic
 :resolution => "medium"
 end 
 
-victory_pic

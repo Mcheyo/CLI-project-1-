@@ -5,7 +5,9 @@ def level2
    elsif @life_count > 0 
     level_array =[]
     level_array << Level.all
+    brainiac_pics
     puts " #{level_array[0][1].description}"
+
     
     # fight 
     # binding.pry
